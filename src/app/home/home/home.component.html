@@ -1,0 +1,36 @@
+<div>
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Nombres</label>
+      <input type="text" name="names" class="form-control" id="formGroupExampleInput" [(ngModel)]="persona.names" placeholder="Inserte Nombres">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Apellidos</label>
+      <input type="text" name="lastNames" class="form-control" id="formGroupExampleInput2" [(ngModel)]="persona.lastNames" placeholder="Inserte sus apellidos">
+    </div>
+
+    <input name="" id="" class="btn btn-primary" type="submit" value="Agregar">
+  </form>
+</div>
+<h2>Listas</h2>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list" >
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.names}}</td>
+        <td>{{item.lastNames}}</td>
+        <td><input type="button" class="btn btn-danger" (click)="EliminaRegistro(item)" value="Eliminar"/></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
